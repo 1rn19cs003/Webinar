@@ -48,6 +48,7 @@ module.exports = function (app, db) {
                 "SELECT * FROM USERS WHERE email=? AND password=?;",
                 [req.body.email, req.body.password],
                 (error, results, fields) => {
+                    console.log(results.length>0)
                     if (error) {
                         res.json({
                             status: 400,
@@ -55,11 +56,19 @@ module.exports = function (app, db) {
                             error: error
                         })
                     }
-                    console.log(results);
-                    res.json({
-                        status: 200,
-                        message: "user LoggedIn successfully", results,
-                    });
+                    else if (results.length>0 ) {
+                        res.json({
+                            status: 200,
+                            message: "user LoggedIn successfully", results,
+                        });
+                    }
+                    else {
+                        // console.log(results);
+                        res.json({
+                            status: 400,
+                            message: "user not found",
+                        })
+                    }
                 }
             )
         } catch (error) {
@@ -198,14 +207,14 @@ module.exports = function (app, db) {
     })
 
 
-    app.put("/updateProduct",(req,res)=>{
-        try{
+    app.put("/updateProduct", (req, res) => {
+        try {
             db.query(
                 "UPDATE PRODUCTS SET productPrice=?,imageLink=?,productDescription=? WHERE productName=?;",
-                [req.body.productPrice,req.body.imageLink,req.body.productDescription,req.body.productName],
-                (error,results,fields)=>{
+                [req.body.productPrice, req.body.imageLink, req.body.productDescription, req.body.productName],
+                (error, results, fields) => {
                     console.log(results)
-                    if(error){
+                    if (error) {
                         res.json({
                             status: 400,
                             message: "error occured",
@@ -220,7 +229,7 @@ module.exports = function (app, db) {
                     }
                 }
             )
-        }catch(error){
+        } catch (error) {
             res.json({
                 status: 400,
                 message: "error occured",
