@@ -7,36 +7,32 @@ const db = require('./src/config/database.config.js')
 const app = express();
 
 
+
+// const db=require("./src/config/database.config")
+// db.authenticate()
+// .then(()=>console.log("DataBase Connected"))
+// .catch((err)=>console.log("ERROR",err));
+
 // use body parser to decode query params and json body.
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
 // cookie parser middleware
-app.use(cookieParser())
+// app.use(cookieParser())
 
 // port set-up
 const port = process.env.PORT || 8000;
 
 require("./src/routes/routes")(app, db)
 // test database connection
-// db.query('SELECT * FROM users;', (error, results, fields) => {
-//   if (error) throw error
-//   console.log(results)
-// })
+db.query('SELECT * FROM users;', (error, results, fields) => {
+  if (error) throw error
+  console.log(results)
+})
 
-// root-route for server
-// app.get('/', (req, res) => {
-//   if (req.session.userid) {
-//     res.send("Welcome User <a href=\'/logout'>click to logout</a>")
-//   } else res.send('who are you man ?');
-//   console.log(req.session)
-// });
 
-// post route for login ( expects json data)
-// app.post('/login', (req, res) => {
-//   //stuff
-// })
 
+// require()
 
 // server listening
 app.listen(port, () => {

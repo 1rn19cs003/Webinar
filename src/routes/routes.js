@@ -110,10 +110,12 @@ module.exports = function (app, db) {
     })
 
     app.get("/allProduct", (req, res) => {
+        console.log("allProduct")
         try {
             db.query(
                 "SELECT * FROM PRODUCTS;",
                 (error, results, fields) => {
+                    console.log(results)
                     if (error) {
                         res.json({
                             status: 400,
