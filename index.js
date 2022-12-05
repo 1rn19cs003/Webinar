@@ -32,8 +32,6 @@ db.query('SELECT * FROM users;', (error, results, fields) => {
 
 
 
-// require()
-
 // server listening
 app.listen(port, () => {
   console.log(`server is running at port ${port}`);
