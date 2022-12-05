@@ -11,6 +11,7 @@ I have made the CRUD(create ,Read Update and Delete )API of Products so you can 
 How to start the server \
 1) Open your vsCode terminal and type the "npm install" -- It'll install all your required packages inside the  node_modules folder 
 2) Once you install the packages type "npm start" and hit enter it'll start your backend server and then you are ready to go .
+
 ![](./src/images/start%20server.jpg)
 
 💻How to call API \
