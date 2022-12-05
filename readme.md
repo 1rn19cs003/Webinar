@@ -1,5 +1,5 @@
 🕵️‍♂️ How to connect with MySQL Workbech \
-   📺 https://www.youtube.com/watch?app=desktop&v=2c2fUOgZMmY
+   📺 https://www.youtube.com/watch?app=desktop&v=2c2fUOgZMmY \
   make sure that you have noted down your username and passowrd aswe are going to use it in database.config file 
 
 
