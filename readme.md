@@ -31,7 +31,7 @@ as you can see on above image the method is post ans we are calling the api with
 ****
 ****
 ****
-I can't say this is the best tutorial but ys you can refer it \
+I can't say this is the best tutorial but yes you can refer it \
 https://www.youtube.com/watch?app=desktop&v=tMZ2UEQxidM
 ****
 ****
